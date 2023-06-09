@@ -1,0 +1,402 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+li,
+ul {
+    list-style: none;
+}
+
+#wrap {
+    width: 100vw;
+    height: 850px;
+    display: flex;
+}
+
+#popup {
+    display: none;
+    width: 500px;
+    min-height: 400px;
+    padding: 20px;
+    position: absolute;
+    background-color: skyblue;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #000;
+    z-index: 20;
+}
+
+#popup .cloud {
+    clip-path: polygon(0 0, 150px 15px, 500px 0, 450px 200px, 100% 100%, 300px 350px, 0% 100%, 10px 140px);
+    background-color: #fff;
+    border-radius: 100px 150px 70px 100px;
+}
+
+.cloud h1 {
+    font: bold 20px/1 '애플 고딕';
+    text-align: center;
+    padding-top: 20px;
+}
+
+.cloud p {
+    font: 12px/1.5 '애플 고딕';
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 80px;
+}
+
+.cloud button {
+    font: 12px/1.5 '애플 고딕';
+    position: absolute;
+    border: 1px solid #000;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px 20px;
+    top: 80%;
+    right: 10%;
+    cursor: pointer;
+}
+
+.cloud button:hover {
+    background-color: skyblue;
+}
+
+header {
+    width: 200px;
+    height: 970px;
+    position: relative;
+}
+
+header h1 {
+    padding: 20px 0;
+}
+
+.gnb {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+}
+
+.gnb>li>a {
+    display: block;
+    width: 150px;
+    height: 40px;
+    background-color: skyblue;
+    text-align: center;
+    font: bold 15px/40px '애플 고딕';
+    border-radius: 20px 0 0 20px;
+}
+
+
+.gnb>li:hover>a {
+    background-color: darkblue;
+    color: #fff;
+}
+
+.sub {
+    display: none;
+    position: absolute;
+    left: 150px;
+}
+
+.gnb>li:nth-of-type(1) .sub {
+    top: 0;
+}
+
+.gnb>li:nth-of-type(2) .sub {
+    top: 40px;
+}
+
+.gnb>li:nth-of-type(3) .sub {
+    top: 80px;
+}
+
+.gnb>li:nth-of-type(4) .sub {
+    top: 120px;
+}
+
+
+
+.sub>li>a {
+    display: block;
+    width: 150px;
+    height: 40px;
+    color: #fff;
+    text-align: center;
+    font: 12px/40px '애플 고딕';
+}
+
+.sub>li>a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.subBg {
+    display: none;
+    position: absolute;
+    z-index: 5;
+    top: 20%;
+    left: 175px;
+    width: calc(100vw - 175px);
+    height: 160px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.log {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    width: 200px;
+    justify-content: center;
+}
+
+.log span a {
+    display: block;
+    padding: 3px 20px;
+    font: 12px/1 '애플 고딕';
+}
+
+.log span:nth-of-type(1) a {
+    border-right: 0.5px solid #000;
+}
+
+main {
+    width: calc(100vw - 200px);
+    height: 970px;
+}
+
+#slide {
+    width: calc(100vw - 200px);
+    height: 400px;
+    overflow: hidden;
+}
+
+#slide .frame {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 10px;
+}
+
+#slide .frame li {
+    position: absolute;
+}
+
+#banner {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+}
+
+#banner .inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border: 1px solid #000;
+    justify-content: space-around;
+    align-items: center;
+    background-color: skyblue;
+    text-align: left;
+    border-radius: 10px;
+}
+
+#banner .inner>a>img {
+    margin: 10px;
+}
+
+
+#banner .inner P a {
+    font: 15px/1.5 "애플 고딕";
+}
+
+#banner .inner span::before {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 70px;
+    background-color: #000;
+    border-radius: 10px;
+    transform: rotate(-45deg) translateY(20px);
+
+}
+
+#banner .inner span::after {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 70px;
+    background-color: #000;
+    border-radius: 10px;
+    transform: rotate(225deg) translateY(20px);
+    ;
+}
+
+#ng {
+    width: 100%;
+    height: 250px;
+    padding: 10px;
+}
+
+#ng .inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#ng .inner .name {
+    display: flex;
+
+}
+
+#ng .inner .name>a {
+    display: inline-block;
+    border: 1px solid #000;
+    padding: 5px 10px;
+    background-color: skyblue;
+    color: #fff;
+    font: 18px/1 '애플 고딕';
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+    position: relative;
+    left: 10px;
+    z-index: 5;
+}
+
+#ng .inner .name>a.on {
+    background-color: #fff;
+    color: #000;
+}
+
+#ng .inner .ngbox div {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    padding: 10px;
+    opacity: 0;
+    z-index: 1;
+}
+
+#ng .inner .ngbox .on {
+    opacity: 1;
+    z-index: 2;
+}
+
+#ng .inner .ngbox #notice {
+    padding-left: 100px;
+    padding-right: 100px;
+    position: relative;
+    z-index: 2;
+}
+
+#ng .inner .ngbox #notice ul>li {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#ng .inner .ngbox #notice ul>li:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#ng .inner .ngbox #notice ul>li:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#ng .inner .ngbox #notice ul>li>a {
+    font: 15px/30px "애플 고딕";
+}
+
+#ng .inner .ngbox #notice ul>li>span {
+    font: 14px/30px "arial";
+}
+
+#ng .inner .ngbox #gallery {
+    position: absolute;
+    top: 29px;
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+#ng .inner .ngbox #gallery a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#ng .inner .ngbox #gallery a>span {
+    font: 14px/30px "애플 고딕";
+    text-align: center;
+}
+
+#baro {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#baro ul {
+    background-color: skyblue;
+    width: 100px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-radius: 0 0 5px 5px;
+
+}
+
+#baro ul>li>a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#baro ul>li>a>span {
+    margin-top: 10px;
+    font: 14px/1.5 '애플 고딕';
+
+}
+
+footer {
+    width: 100vw;
+    height: 120px;
+    display: flex;
+}
+
+footer h1 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .copyright {
+    flex: 8;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+footer .copyright span {
+    font: 14px/1.5 '애플 고딕';
+}
